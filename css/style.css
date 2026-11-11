@@ -1766,7 +1766,9 @@ blockquote cite {
 
   .ticker__track {
     gap: 20px;
-    animation-duration: 24s;
+    padding-left: 16px;
+    animation: none;
+    transform: none;
   }
 
   .section-head {

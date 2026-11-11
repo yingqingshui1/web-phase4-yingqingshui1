@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>口令锻造所 · 清荣的第一阶段作品档案</title>
+  <meta name="description" content="口令锻造所：一个用 Python secrets 实现的命令行随机口令生成器。项目简介、功能截图、运行步骤与源码。">
+  <meta name="theme-color" content="#f3f0e6">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="project-page">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="清荣作品档案首页">
+        <span class="brand__mark" aria-hidden="true">QR</span>
+        <span class="brand__text">
+          <strong>QINGRONG</strong>
+          <small>第一阶段作品档案</small>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="index.html#work">作品 <span>02</span></a>
+        <a href="index.html#method">方法 <span>03</span></a>
+        <a href="#source">源码 <span aria-hidden="true">↓</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="project-shell">
+      <nav class="breadcrumb" aria-label="面包屑">
+        <a href="index.html">作品索引</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">01 口令锻造所</span>
+      </nav>
+
+      <section class="project-hero" aria-labelledby="project-title">
+        <div class="project-hero__main">
+          <p class="kicker"><span class="kicker__dot" aria-hidden="true"></span>PROJECT 01 / CLI TOOL</p>
+          <h1 id="project-title">口令<br>锻造所</h1>
+          <p class="project-hero__en">PASSFORGE</p>
+          <p class="project-hero__lede">把“随机”做成一件可信的小工具。不是生成一串看起来像密码的字符，而是让每一次输出都能解释、能验证、能复现。</p>
+        </div>
+        <aside class="project-hero__aside" aria-label="项目信息">
+          <div class="build-status" data-build-status role="status" aria-live="polite">
+            <span class="build-status__dot" aria-hidden="true"></span>
+            <span data-status-text>读取构建状态…</span>
+          </div>
+          <dl class="project-facts">
+            <div><dt>类型</dt><dd>命令行工具</dd></div>
+            <div><dt>语言</dt><dd>Python 3.12</dd></div>
+            <div><dt>我的角色</dt><dd>设计 / 实现 / 测试</dd></div>
+            <div><dt>状态</dt><dd><span class="status-ink">已归档 · 可运行</span></dd></div>
+          </dl>
+          <a class="text-link" href="#run">直接看运行步骤 <span aria-hidden="true">↓</span></a>
+        </aside>
+      </section>
+
+      <figure class="hero-shot">
+        <div class="hero-shot__frame">
+          <div class="hero-shot__bar">
+            <span class="hero-shot__lights" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span>POWERSHELL / PASSWORD_GEN.PY</span>
+            <span>1320 × 556</span>
+          </div>
+          <img src="assets/terminal-normal.png" width="1320" height="556" alt="终端截图：运行 password_gen.py 生成 16 位含符号密码和 20 位纯数字密码。">
+        </div>
+        <figcaption><span>FIG. 01</span> 正常输入实测。16 位默认字符集与 20 位纯数字，两次都以退出码 0 结束。</figcaption>
+      </figure>
+
+      <div class="project-layout">
+        <div class="project-content">
+          <section class="content-section" id="about" aria-labelledby="about-title">
+            <div class="content-label"><span>01</span> 项目简介</div>
+            <h2 id="about-title">随机，不等于随便。</h2>
+            <p class="lead"><span class="dropcap">口</span>令锻造所是一个命令行随机密码生成器。它支持四种字符集、可指定长度，并用 Python 标准库 <code>secrets</code> 生成密码学安全的随机结果。每一类字符至少出现一次，长度不足时会在分配内存之前直接拒绝。</p>
+            <p>这个项目最初只有 202 行。测试时发现，输入 <code>--length 20000000</code> 会让程序长时间没有响应；第二版加上 1,000,000 的长度上限，把错误路径收束成一行可读的中文提示，再用 17 个功能/边界用例和 130 次稳定性运行把它压住。</p>
+            <blockquote>
+              <p>“密码工具最容易犯的错，是看起来随机，其实不可信。”</p>
+              <cite>—— 这次返工留下的判断</cite>
+            </blockquote>
+          </section>
+
+          <section class="content-section" aria-labelledby="features-title">
+            <div class="content-label"><span>02</span> 三个设计约束</div>
+            <h2 id="features-title">先约束，再生成。</h2>
+            <div class="feature-grid">
+              <article class="feature">
+                <span class="feature__num">A</span>
+                <h3>密码学随机</h3>
+                <p>使用 <code>secrets.choice</code>，不用可预测的伪随机数生成器。随机性不是装饰，是工具的地基。</p>
+              </article>
+              <article class="feature">
+                <span class="feature__num">B</span>
+                <h3>规则先行</h3>
+                <p>字符集决定最小长度：数字 1 位、字母 2 位、字母加数字 3 位、全部 4 位。校验发生在生成之前。</p>
+              </article>
+              <article class="feature">
+                <span class="feature__num">C</span>
+                <h3>错误可读</h3>
+                <p>失败只输出一行中文错误，退出码 2，不打印 traceback。终端里的错误也应该是给人看的。</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="content-section" id="run" aria-labelledby="run-title">
+            <div class="content-label"><span>03</span> 运行步骤</div>
+            <h2 id="run-title">三步，跑起来。</h2>
+            <ol class="steps">
+              <li class="step">
+                <div class="step__head">
+                  <span class="step__num">01</span>
+                  <div><h3>拿到源码</h3><p>下载本页的 <code>password_gen.py</code>，或克隆仓库。</p></div>
+                </div>
+                <div class="command">
+                  <code id="cmd-clone">git clone https://github.com/yingqingshui1/web-phase4-yingqingshui1.git</code>
+                  <button class="copy-btn" type="button" data-copy="cmd-clone" aria-label="复制克隆命令">复制</button>
+                </div>
+              </li>
+              <li class="step">
+                <div class="step__head">
+                  <span class="step__num">02</span>
+                  <div><h3>生成 16 位密码</h3><p>默认使用 <code>all</code> 字符集，包含大小写字母、数字和符号。</p></div>
+                </div>
+                <div class="command">
+                  <code id="cmd-run">python assets/password_gen.py --length 16</code>
+                  <button class="copy-btn" type="button" data-copy="cmd-run" aria-label="复制生成命令">复制</button>
+                </div>
+              </li>
+              <li class="step">
+                <div class="step__head">
+                  <span class="step__num">03</span>
+                  <div><h3>换一种字符集</h3><p>只用数字，生成 20 位；长度不足或超过上限会以退出码 2 拒绝。</p></div>
+                </div>
+                <div class="command">
+                  <code id="cmd-digits">python assets/password_gen.py --charset digits --length 20</code>
+                  <button class="copy-btn" type="button" data-copy="cmd-digits" aria-label="复制数字密码命令">复制</button>
+                </div>
+              </li>
+            </ol>
+            <p class="note">需要 Python 3.10+。没有系统 Python 时，先建虚拟环境；Windows 下把 <code>python</code> 换成你的解释器路径即可。</p>
+          </section>
+
+          <section class="content-section" aria-labelledby="shots-title">
+            <div class="content-label"><span>04</span> 功能截图</div>
+            <h2 id="shots-title">证据，不靠嘴说。</h2>
+            <div class="shot-grid">
+              <figure class="shot-card">
+                <img src="assets/terminal-normal.png" width="1320" height="556" loading="lazy" alt="正常输入：16 位含符号密码和 20 位纯数字密码的终端输出。">
+                <figcaption><span>FIG. 01</span> 正常输入 · 退出码 0</figcaption>
+              </figure>
+              <figure class="shot-card">
+                <img src="assets/terminal-edge.png" width="1320" height="1150" loading="lazy" alt="边界输入：长度为 0、负数、过短以及超过一百万时的中文错误提示。">
+                <figcaption><span>FIG. 02</span> 边界输入 · 全部退出码 2</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="content-section source-section" id="source" aria-labelledby="source-title">
+            <div class="content-label"><span>05</span> 源码与边界</div>
+            <h2 id="source-title">把规则写进代码。</h2>
+            <p>核心逻辑只有几件事：解析参数、按类别抽字符、打乱、校验、输出。下面是长度校验的片段。</p>
+            <pre class="code-block" aria-label="password_gen.py 长度校验代码片段"><code>MAX_LENGTH = 1_000_000
+
+def validate_length(length: int) -&gt; None:
+    if length &lt;= 0:
+        raise PasswordError(f"密码长度必须大于 0，当前为 {length}")
+    if length &gt; MAX_LENGTH:
+        raise PasswordError(
+            f"密码长度不能超过 {MAX_LENGTH}，当前为 {length}"
+        )</code></pre>
+            <div class="source-actions">
+              <a class="button button--primary" href="assets/password_gen.py" download>下载完整源码 <span aria-hidden="true">↓</span></a>
+              <a class="button button--ghost" href="https://github.com/yingqingshui1/web-phase4-yingqingshui1" data-repo-link>在 GitHub 查看 <span aria-hidden="true">↗</span></a>
+            </div>
+            <p class="note">文件：<code>assets/password_gen.py</code> · 219 行 · 标准库实现，无第三方依赖。</p>
+          </section>
+        </div>
+
+        <aside class="project-side" aria-label="项目速览">
+          <div class="side-card">
+            <p class="mono-label">AT A GLANCE</p>
+            <dl class="side-facts">
+              <div><dt>项目编号</dt><dd>01 / 02</dd></div>
+              <div><dt>周期</dt><dd>第三周 · 一次返工</dd></div>
+              <div><dt>测试</dt><dd>17 用例 + 130 次稳定性</dd></div>
+              <div><dt>上限</dt><dd>1,000,000 位</dd></div>
+            </dl>
+          </div>
+          <div class="side-card side-card--mint">
+            <p class="mono-label">READING</p>
+            <p>这页本身是网页阶段的练习：两个语义化页面、一次筛选、一次 <code>fetch</code>、一张压缩后的截图，以及一个能打开的 404。</p>
+            <a class="text-link" href="index.html#work">回到作品索引 <span aria-hidden="true">→</span></a>
+          </div>
+        </aside>
+      </div>
+
+      <nav class="project-next" aria-label="项目翻页">
+        <span class="mono-label">NEXT UP</span>
+        <a href="index.html#work">
+          <span>回到作品索引</span>
+          <strong>还有下一个项目 <span aria-hidden="true">↗</span></strong>
+        </a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__bottom">
+      <p>© <span data-year>2026</span> 清荣 · 第一阶段作品档案</p>
+      <p class="site-footer__meta">HAND-CODED · NO FRAMEWORK · <a href="#main">回到顶部 ↑</a></p>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="noscript-note">页面内容无需 JavaScript 即可阅读；复制按钮和构建状态需要开启 JavaScript。</p>
+  </noscript>
+  <script src="js/project.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+{
+  "capturedAt": "2026-11-11T11:27:53.847Z",
+  "pages": {
+    "home": {
+      "title": "清荣 · 第一阶段作品档案",
+      "url": "http://127.0.0.1:4173/",
+      "innerWidth": 1440,
+      "innerHeight": 1100,
+      "scrollWidth": 1425,
+      "bodyScrollWidth": 1425,
+      "scrollHeight": 2647,
+      "horizontalOverflow": false,
+      "cards": 2,
+      "visibleCards": 2,
+      "status": null,
+      "selectedFilter": "all"
+    },
+    "project": {
+      "title": "口令锻造所 · 清荣的第一阶段作品档案",
+      "url": "http://127.0.0.1:4173/project.html",
+      "innerWidth": 1440,
+      "innerHeight": 1100,
+      "scrollWidth": 1425,
+      "bodyScrollWidth": 1425,
+      "scrollHeight": 5157,
+      "horizontalOverflow": false,
+      "cards": 0,
+      "visibleCards": 0,
+      "status": "在线 · BUILD 04.1",
+      "selectedFilter": null
+    },
+    "mobileHome": {
+      "title": "清荣 · 第一阶段作品档案",
+      "url": "http://127.0.0.1:4173/",
+      "innerWidth": 375,
+      "innerHeight": 812,
+      "scrollWidth": 375,
+      "bodyScrollWidth": 375,
+      "scrollHeight": 2911,
+      "horizontalOverflow": false,
+      "cards": 2,
+      "visibleCards": 2,
+      "status": null,
+      "selectedFilter": "all"
+    },
+    "mobileProject": {
+      "title": "口令锻造所 · 清荣的第一阶段作品档案",
+      "url": "http://127.0.0.1:4173/project.html",
+      "innerWidth": 375,
+      "innerHeight": 812,
+      "scrollWidth": 375,
+      "bodyScrollWidth": 375,
+      "scrollHeight": 4984,
+      "horizontalOverflow": false,
+      "cards": 0,
+      "visibleCards": 0,
+      "status": "在线 · BUILD 04.1",
+      "selectedFilter": null
+    },
+    "notFound": {
+      "title": "404 · 这一页还没被锻造出来",
+      "url": "http://127.0.0.1:4173/this-page-does-not-exist",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "scrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "scrollHeight": 900,
+      "horizontalOverflow": false,
+      "cards": 0,
+      "visibleCards": 0,
+      "status": null,
+      "selectedFilter": null
+    }
+  },
+  "screens": {
+    "desktopHome": 330270,
+    "desktopHomeFull": 564713,
+    "desktopProject": 345971,
+    "desktopProjectFull": 839793,
+    "mobileHome": 97095,
+    "mobileHomeFull": 269265,
+    "mobileProject": 94809,
+    "mobileProjectFull": 408297,
+    "notFound": 316902
+  },
+  "network": {
+    "capturedOn": "http://127.0.0.1:4173/project.html",
+    "failures": [],
+    "all": [
+      {
+        "url": "http://127.0.0.1:4173/project.html",
+        "method": "GET",
+        "type": "Document",
+        "status": 200,
+        "mimeType": "text/html",
+        "durationMs": 5
+      },
+      {
+        "url": "http://127.0.0.1:4173/css/style.css",
+        "method": "GET",
+        "type": "Stylesheet",
+        "status": 200,
+        "mimeType": "text/css",
+        "durationMs": 4
+      },
+      {
+        "url": "http://127.0.0.1:4173/assets/terminal-normal.png",
+        "method": "GET",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/png",
+        "durationMs": 4
+      },
+      {
+        "url": "http://127.0.0.1:4173/js/project.js",
+        "method": "GET",
+        "type": "Script",
+        "status": 200,
+        "mimeType": "text/javascript",
+        "durationMs": 10
+      },
+      {
+        "url": "http://127.0.0.1:4173/data/status.json",
+        "method": "GET",
+        "type": "Fetch",
+        "status": 200,
+        "mimeType": "application/json",
+        "durationMs": 5
+      },
+      {
+        "url": "http://127.0.0.1:4173/assets/terminal-edge.png",
+        "method": "GET",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/png",
+        "durationMs": 7
+      }
+    ],
+    "selected": [
+      {
+        "url": "http://127.0.0.1:4173/project.html",
+        "method": "GET",
+        "type": "Document",
+        "status": 200,
+        "mimeType": "text/html",
+        "durationMs": 5
+      },
+      {
+        "url": "http://127.0.0.1:4173/css/style.css",
+        "method": "GET",
+        "type": "Stylesheet",
+        "status": 200,
+        "mimeType": "text/css",
+        "durationMs": 4
+      },
+      {
+        "url": "http://127.0.0.1:4173/data/status.json",
+        "method": "GET",
+        "type": "Fetch",
+        "status": 200,
+        "mimeType": "application/json",
+        "durationMs": 5
+      }
+    ]
+  },
+  "checks": {
+    "filter": {
+      "visible": [
+        "system"
+      ],
+      "pressed": "system",
+      "status": "已筛选：系统 · 1 个项目"
+    },
+    "copy": {
+      "before": {
+        "secure": true,
+        "clipboard": "object",
+        "focused": true
+      },
+      "buttonText": "已复制",
+      "clipboardText": "python assets/password_gen.py --length 16"
+    }
+  },
+  "notFoundStatus": 404,
+  "consoleIssues": {
+    "normal": [],
+    "notFound": [
+      {
+        "type": "log",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>清荣 · 第一阶段作品档案</title>
+  <meta name="description" content="清荣的第一阶段作品档案：命令行口令工具与 C 语言学生成绩管理器，以及一次把静态页面推上公网的练习。">
+  <meta name="theme-color" content="#f3f0e6">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="清荣作品档案首页">
+        <span class="brand__mark" aria-hidden="true">QR</span>
+        <span class="brand__text">
+          <strong>QINGRONG</strong>
+          <small>第一阶段作品档案</small>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="#work">作品 <span>02</span></a>
+        <a href="#method">方法 <span>03</span></a>
+        <a href="project.html">项目档案 <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__copy">
+        <p class="kicker"><span class="kicker__dot" aria-hidden="true"></span>WEB PHASE 04 / 2026.11</p>
+        <h1 id="hero-title">先让作品，<br>有个<span class="mark">网址</span>。</h1>
+        <p class="hero__lede">我是清荣，正在学习把作业做成能被打开的作品。这里收着第一阶段的两个项目、一次返工，以及一次把静态页面推上公网的练习。</p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="#work">
+            看作品
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5"/></svg>
+          </a>
+          <a class="button button--ghost" href="project.html">读项目档案 <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+      <aside class="issue-card" aria-label="本期档案信息">
+        <div class="issue-card__top">
+          <span class="mono-label">CURRENT ISSUE</span>
+          <span class="status-pill"><span class="status-pill__dot" aria-hidden="true"></span>PHASE 01</span>
+        </div>
+        <p class="issue-card__number" aria-hidden="true">01</p>
+        <div class="issue-card__bottom">
+          <p>第一次把页面<br>放到公网上。</p>
+          <dl class="issue-card__meta">
+            <div><dt>PAGES</dt><dd>02</dd></div>
+            <div><dt>SHOTS</dt><dd>02</dd></div>
+            <div><dt>FETCH</dt><dd>01</dd></div>
+          </dl>
+        </div>
+      </aside>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>HTML5</span><i></i><span>CSS GRID</span><i></i><span>VANILLA JS</span><i></i><span>GITHUB PAGES</span><i></i><span>DEVTOOLS NETWORK</span><i></i>
+        <span>HTML5</span><i></i><span>CSS GRID</span><i></i><span>VANILLA JS</span><i></i><span>GITHUB PAGES</span><i></i><span>DEVTOOLS NETWORK</span><i></i>
+      </div>
+    </div>
+
+    <section class="section work" id="work" aria-labelledby="work-title">
+      <div class="section-head">
+        <div>
+          <p class="kicker">01 / SELECTED WORK</p>
+          <h2 id="work-title">作品索引</h2>
+        </div>
+        <p class="section-head__note"><span data-visible-count>02</span> 个项目<br>其中 01 个已展开</p>
+      </div>
+
+      <div class="filter-bar" role="group" aria-label="按项目类型筛选">
+        <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">全部 <span>02</span></button>
+        <button class="filter-btn" type="button" data-filter="tool" aria-pressed="false">工具 <span>01</span></button>
+        <button class="filter-btn" type="button" data-filter="system" aria-pressed="false">系统 <span>01</span></button>
+        <p class="filter-status" aria-live="polite" data-filter-status>显示全部 2 个项目</p>
+      </div>
+
+      <div class="work-grid" data-work-grid>
+        <article class="project-card project-card--feature" data-category="tool">
+          <div class="project-card__media">
+            <div class="media-topline"><span>LIVE OUTPUT</span><span>01 / 02</span></div>
+            <img src="assets/terminal-normal.png" width="1320" height="556" alt="口令锻造所的终端运行截图：生成 16 位含符号密码，以及 20 位纯数字密码。">
+            <p class="media-caption">真实终端输出 · Windows PowerShell</p>
+          </div>
+          <div class="project-card__body">
+            <div class="project-card__top">
+              <span class="mono-label">PROJECT 01 / FEATURED</span>
+              <span class="project-card__arrow" aria-hidden="true">↗</span>
+            </div>
+            <h3>口令锻造所</h3>
+            <p class="project-card__en">PASSFORGE / CLI TOOL</p>
+            <p class="project-card__desc">一个用 Python 写的命令行随机口令生成器。使用 <code>secrets</code> 而不是 <code>random</code>，把长度、字符集和失败边界都写进规则里。</p>
+            <ul class="tag-list" aria-label="技术栈">
+              <li>Python 3.12</li><li>argparse</li><li>secrets</li><li>unittest</li>
+            </ul>
+            <a class="text-link" href="project.html">打开项目档案 <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <article class="project-card project-card--compact" data-category="system">
+          <div class="compact-mark" aria-hidden="true"><span>C</span><small>ARCHIVE</small></div>
+          <div class="project-card__body">
+            <div class="project-card__top">
+              <span class="mono-label">PROJECT 02 / ARCHIVE</span>
+              <span class="project-card__status">整理中</span>
+            </div>
+            <h3>学生成绩管理器</h3>
+            <p class="project-card__en">STUDENT MANAGER / C</p>
+            <p class="project-card__desc">用结构体、链表和文件读写撑起来的小系统。先学会让数据不丢，再谈界面好不好看。</p>
+            <ul class="tag-list" aria-label="技术栈">
+              <li>C</li><li>链表</li><li>文件持久化</li>
+            </ul>
+            <p class="project-card__footnote">档案页尚未展开 · 源码在本地仓库</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="method" id="method" aria-labelledby="method-title">
+      <div class="method__head">
+        <p class="kicker kicker--light">02 / HOW I WORK</p>
+        <h2 id="method-title">不急着好看，<br>先让它站得住。</h2>
+        <p>这一阶段真正留下的，不是几张漂亮的截图，而是三种做事顺序。</p>
+      </div>
+      <ol class="method-list">
+        <li>
+          <span class="method-list__num">01</span>
+          <div>
+            <h3>先跑通</h3>
+            <p>能打开、能点击、能返回，再谈动效和排版。页面首先是一个可用的东西。</p>
+          </div>
+        </li>
+        <li>
+          <span class="method-list__num">02</span>
+          <div>
+            <h3>再返工</h3>
+            <p>第一版超长输入会卡住，就加上限、补测试、重跑 130 次稳定性检查。返工不是失败，是证据。</p>
+          </div>
+        </li>
+        <li>
+          <span class="method-list__num">03</span>
+          <div>
+            <h3>留证据</h3>
+            <p>截图、状态码、耗时、404。写清楚自己怎么知道它真的能用，而不是只说“应该没问题”。</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__cta">
+      <p class="kicker">NEXT / PROJECT 01</p>
+      <a href="project.html">看一看<br><span>口令锻造所</span> <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="site-footer__bottom">
+      <p>© <span data-year>2026</span> 清荣 · 第一阶段作品档案</p>
+      <p class="site-footer__meta">HAND-CODED · NO FRAMEWORK · <a href="#main">回到顶部 ↑</a></p>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="noscript-note">这个页面不需要 JavaScript 也能阅读；筛选和复制按钮需要开启 JavaScript。</p>
+  </noscript>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

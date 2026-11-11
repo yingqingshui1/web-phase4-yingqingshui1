@@ -27,7 +27,7 @@
 | `assets/terminal-normal.png` | 1320 × 556 | 42 KB | 正常输入终端截图 |
 | `assets/terminal-edge.png` | 1320 × 1150 | 113 KB | 边界输入终端截图 |
 
-两张图都低于 300 KB。页面没有外部字体、图片 CDN 或第三方脚本。
+两张图都低于 300 KB；`screenshots/` 里的交付截图也逐张压到 300 KB 以内。页面没有外部字体、图片 CDN 或第三方脚本。
 
 ## 本地打开
 
@@ -65,7 +65,7 @@ python -m http.server 4173
 | 控制台无红色报错 | 正常页面 0 条 error；故意访问 404 时只有浏览器对 404 资源的那一条预期日志 |
 | HTTPS 公网地址 | <https://yingqingshui1.github.io/web-phase4-yingqingshui1/>（GitHub Pages） |
 
-本地验证结果（Edge 157，2026-11-11）：
+验证结果（Edge 157，2026-11-11，本地 + 公网）：
 
 - 1440px：`scrollWidth 1425`（垂直滚动条占 15px），`horizontalOverflow: false`
 - 375px：`scrollWidth 375`，`horizontalOverflow: false`
@@ -76,15 +76,15 @@ python -m http.server 4173
 
 ## 抓包记录
 
-采集方式：Edge DevTools Network（通过 DevTools Protocol 同步记录请求、状态码与 `loadingFinished` 时间），本地服务器 `127.0.0.1:4173`。
+采集方式：Edge DevTools Network（通过 DevTools Protocol 同步记录请求、状态码与 `loadingFinished` 时间），公网地址 `https://yingqingshui1.github.io/web-phase4-yingqingshui1/project.html`，单次冷缓存样本。
 
 | # | 请求 | 方法 | 状态码 | 耗时 |
 |---|---|---|---:|---:|
-| 1 | `/project.html`（页面主文档） | GET | 200 | 4 ms |
-| 2 | `/css/style.css`（样式表） | GET | 200 | 5 ms |
-| 3 | `/data/status.json`（自己写的 `fetch`） | GET | 200 | 7 ms |
+| 1 | `/project.html`（页面主文档） | GET | 200 | 665 ms |
+| 2 | `/css/style.css`（样式表） | GET | 200 | 936 ms |
+| 3 | `/data/status.json`（自己写的 `fetch`） | GET | 200 | 678 ms |
 
-补充：`/js/project.js` 为 10 ms、`/assets/terminal-normal.png` 为 6 ms；均为 200。完整记录见 `evidence/capture-report.json`。
+其余请求同样是 200；完整请求列表、MIME 类型和耗时都在 `evidence/capture-report.json`。公网耗时受本机网络和 GitHub Pages CDN 影响，每次打开会有波动，这里只取一次实际记录，不当作性能承诺。
 
 ### 故意请求不存在的路径
 
@@ -95,8 +95,6 @@ python -m http.server 4173
 ![404 页面](screenshots/404.png)
 
 控制台里会出现一条 404 资源日志，这是故意制造的；正常页面没有 error。
-
-> 说明：上表是本地回环地址的耗时，只用于说明请求顺序与状态码；真实公网耗时会在部署后重新采样。
 
 ## 截图
 

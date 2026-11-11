@@ -1,9 +1,9 @@
 {
-  "capturedAt": "2026-11-11T11:27:53.847Z",
+  "capturedAt": "2026-11-11T11:50:04.064Z",
   "pages": {
     "home": {
       "title": "清荣 · 第一阶段作品档案",
-      "url": "http://127.0.0.1:4173/",
+      "url": "https://yingqingshui1.github.io/web-phase4-yingqingshui1/",
       "innerWidth": 1440,
       "innerHeight": 1100,
       "scrollWidth": 1425,
@@ -17,7 +17,7 @@
     },
     "project": {
       "title": "口令锻造所 · 清荣的第一阶段作品档案",
-      "url": "http://127.0.0.1:4173/project.html",
+      "url": "https://yingqingshui1.github.io/web-phase4-yingqingshui1/project.html",
       "innerWidth": 1440,
       "innerHeight": 1100,
       "scrollWidth": 1425,
@@ -31,7 +31,7 @@
     },
     "mobileHome": {
       "title": "清荣 · 第一阶段作品档案",
-      "url": "http://127.0.0.1:4173/",
+      "url": "https://yingqingshui1.github.io/web-phase4-yingqingshui1/",
       "innerWidth": 375,
       "innerHeight": 812,
       "scrollWidth": 375,
@@ -45,7 +45,7 @@
     },
     "mobileProject": {
       "title": "口令锻造所 · 清荣的第一阶段作品档案",
-      "url": "http://127.0.0.1:4173/project.html",
+      "url": "https://yingqingshui1.github.io/web-phase4-yingqingshui1/project.html",
       "innerWidth": 375,
       "innerHeight": 812,
       "scrollWidth": 375,
@@ -59,7 +59,7 @@
     },
     "notFound": {
       "title": "404 · 这一页还没被锻造出来",
-      "url": "http://127.0.0.1:4173/this-page-does-not-exist",
+      "url": "https://yingqingshui1.github.io/web-phase4-yingqingshui1/this-page-does-not-exist",
       "innerWidth": 1440,
       "innerHeight": 900,
       "scrollWidth": 1440,
@@ -73,93 +73,93 @@
     }
   },
   "screens": {
-    "desktopHome": 330270,
-    "desktopHomeFull": 564713,
+    "desktopHome": 330326,
+    "desktopHomeFull": 564898,
     "desktopProject": 345971,
-    "desktopProjectFull": 839793,
-    "mobileHome": 97095,
-    "mobileHomeFull": 269265,
+    "desktopProjectFull": 824303,
+    "mobileHome": 96739,
+    "mobileHomeFull": 268985,
     "mobileProject": 94809,
     "mobileProjectFull": 408297,
-    "notFound": 316902
+    "notFound": 318089
   },
   "network": {
-    "capturedOn": "http://127.0.0.1:4173/project.html",
+    "capturedOn": "https://yingqingshui1.github.io/web-phase4-yingqingshui1/project.html",
     "failures": [],
     "all": [
       {
-        "url": "http://127.0.0.1:4173/project.html",
+        "url": "https://yingqingshui1.github.io/web-phase4-yingqingshui1/project.html",
         "method": "GET",
         "type": "Document",
         "status": 200,
         "mimeType": "text/html",
-        "durationMs": 5
+        "durationMs": 665
       },
       {
-        "url": "http://127.0.0.1:4173/css/style.css",
+        "url": "https://yingqingshui1.github.io/web-phase4-yingqingshui1/css/style.css",
         "method": "GET",
         "type": "Stylesheet",
         "status": 200,
         "mimeType": "text/css",
-        "durationMs": 4
+        "durationMs": 936
       },
       {
-        "url": "http://127.0.0.1:4173/assets/terminal-normal.png",
+        "url": "https://yingqingshui1.github.io/web-phase4-yingqingshui1/assets/terminal-normal.png",
         "method": "GET",
         "type": "Image",
         "status": 200,
         "mimeType": "image/png",
-        "durationMs": 4
+        "durationMs": 1820
       },
       {
-        "url": "http://127.0.0.1:4173/js/project.js",
+        "url": "https://yingqingshui1.github.io/web-phase4-yingqingshui1/js/project.js",
         "method": "GET",
         "type": "Script",
         "status": 200,
-        "mimeType": "text/javascript",
-        "durationMs": 10
+        "mimeType": "application/javascript",
+        "durationMs": 1820
       },
       {
-        "url": "http://127.0.0.1:4173/data/status.json",
+        "url": "https://yingqingshui1.github.io/web-phase4-yingqingshui1/assets/terminal-edge.png",
+        "method": "GET",
+        "type": "Image",
+        "status": 200,
+        "mimeType": "image/png",
+        "durationMs": null
+      },
+      {
+        "url": "https://yingqingshui1.github.io/web-phase4-yingqingshui1/data/status.json",
         "method": "GET",
         "type": "Fetch",
         "status": 200,
         "mimeType": "application/json",
-        "durationMs": 5
-      },
-      {
-        "url": "http://127.0.0.1:4173/assets/terminal-edge.png",
-        "method": "GET",
-        "type": "Image",
-        "status": 200,
-        "mimeType": "image/png",
-        "durationMs": 7
+        "durationMs": 678
       }
     ],
     "selected": [
       {
-        "url": "http://127.0.0.1:4173/project.html",
+        "url": "https://yingqingshui1.github.io/web-phase4-yingqingshui1/project.html",
         "method": "GET",
         "type": "Document",
         "status": 200,
         "mimeType": "text/html",
-        "durationMs": 5
+        "durationMs": 665
       },
       {
-        "url": "http://127.0.0.1:4173/css/style.css",
+        "url": "https://yingqingshui1.github.io/web-phase4-yingqingshui1/css/style.css",
         "method": "GET",
         "type": "Stylesheet",
         "status": 200,
         "mimeType": "text/css",
-        "durationMs": 4
+        "durationMs": 936
       },
       {
-        "url": "http://127.0.0.1:4173/data/status.json",
+        "url": "https://yingqingshui1.github.io/web-phase4-yingqingshui1/data/status.json",
         "method": "GET",
         "type": "Fetch",
         "status": 200,
         "mimeType": "application/json",
-        "durationMs": 5
+        "durationMs": 678
       }
     ]
   },
@@ -187,7 +187,7 @@
     "notFound": [
       {
         "type": "log",
-        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
       }
     ]
   }

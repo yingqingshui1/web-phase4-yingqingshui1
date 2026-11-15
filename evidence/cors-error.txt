@@ -1,0 +1,18 @@
+TASK 03 / CORS ERROR CAPTURE
+PAGE   http://127.0.0.1:4173/tasks.html
+API    http://127.0.0.1:5000
+STATE  {
+  "view": "error",
+  "api": "OFFLINE",
+  "count": "--",
+  "status": "ERROR",
+  "error": "无法连接 API：Failed to fetch",
+  "items": []
+}
+
+CONSOLE ERRORS:
+Access to fetch at 'http://127.0.0.1:5000/api/tasks' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+Failed to load resource: net::ERR_FAILED
+
+NETWORK FAILURES:
+{"type":"Fetch","errorText":"net::ERR_FAILED","blockedReason":null}

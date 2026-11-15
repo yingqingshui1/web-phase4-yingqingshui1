@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>任务台 · 清荣的第一阶段作品档案</title>
+  <meta name="description" content="任务台：用 fetch 连接 Flask + SQLite，完成新增、删除、加载中、空数据和错误重试的前后端联调练习。">
+  <meta name="theme-color" content="#f3f0e6">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/tasks.css">
+</head>
+<body class="tasks-page">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="清荣作品档案首页">
+        <span class="brand__mark" aria-hidden="true">QR</span>
+        <span class="brand__text">
+          <strong>QINGRONG</strong>
+          <small>第一阶段作品档案</small>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="index.html#work">作品 <span>02</span></a>
+        <a href="index.html#method">方法 <span>03</span></a>
+        <a href="project.html">项目档案 <span aria-hidden="true">↗</span></a>
+        <a href="tasks.html" aria-current="page">任务台 <span>04</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="task-shell">
+      <nav class="breadcrumb" aria-label="面包屑">
+        <a href="index.html">作品索引</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">04 任务台</span>
+      </nav>
+
+      <section class="task-hero" aria-labelledby="task-hero-title">
+        <div class="task-hero__copy">
+          <p class="kicker"><span class="kicker__dot" aria-hidden="true"></span>TASK 03 / FRONT ↔ BACK</p>
+          <h1 id="task-hero-title">把页面，<br>接到<span class="mark">真实数据</span>上。</h1>
+          <p class="task-hero__lede">这次不把数组写在 JS 里。列表来自 Flask + SQLite，新增和删除都会重新请求接口；加载中、空数据和请求失败，都留在页面上。</p>
+        </div>
+        <aside class="api-panel" aria-label="接口连接信息">
+          <div class="api-panel__top">
+            <span class="mono-label">API ENDPOINT</span>
+            <span class="api-state" data-api-state>CHECKING</span>
+          </div>
+          <code class="api-panel__url" data-api-base>读取配置中…</code>
+          <p class="api-panel__note">GET 列表 · POST 新增 · DELETE 删除</p>
+          <dl class="api-panel__facts">
+            <div><dt>DATA</dt><dd>SQLite</dd></div>
+            <div><dt>CORS</dt><dd>服务端响应头</dd></div>
+            <div><dt>REFRESH</dt><dd>写后重新 GET</dd></div>
+          </dl>
+        </aside>
+      </section>
+
+      <section class="task-workspace" aria-labelledby="task-list-title">
+        <aside class="task-compose" aria-labelledby="compose-title">
+          <p class="kicker">NEW TASK / POST</p>
+          <h2 id="compose-title">加一件事。</h2>
+          <form class="task-form" data-task-form novalidate>
+            <label for="task-title">任务标题</label>
+            <input id="task-title" name="title" type="text" maxlength="100" placeholder="例如：把 CORS 报错原文贴进 README" autocomplete="off" required>
+            <p class="field-error" data-title-error hidden></p>
+
+            <label for="task-priority">优先级</label>
+            <select id="task-priority" name="priority">
+              <option value="medium" selected>medium · 普通</option>
+              <option value="high">high · 优先</option>
+              <option value="low">low · 稍后</option>
+            </select>
+
+            <button class="button button--primary task-submit" type="submit" data-submit>
+              <span data-submit-label>写入 SQLite</span>
+              <span aria-hidden="true">→</span>
+            </button>
+            <p class="form-note">POST /api/tasks · 创建成功后自动 GET 刷新</p>
+            <p class="toast" data-toast role="status" aria-live="polite"></p>
+          </form>
+        </aside>
+
+        <section class="task-board" aria-labelledby="task-list-title">
+          <header class="board-head">
+            <div>
+              <p class="kicker">DATABASE / TASKS</p>
+              <h2 id="task-list-title">任务列表</h2>
+            </div>
+            <div class="board-count" aria-live="polite">
+              <strong data-count>--</strong>
+              <span>条记录</span>
+            </div>
+          </header>
+
+          <div class="board-toolbar">
+            <span class="state-pill" data-state-label>LOADING</span>
+            <button class="refresh-btn" type="button" data-refresh>刷新 <span aria-hidden="true">↻</span></button>
+          </div>
+
+          <div class="state-view state-loading" data-view="loading" aria-busy="true" aria-live="polite">
+            <div class="skeleton-row"><span></span><span></span><span></span></div>
+            <div class="skeleton-row"><span></span><span></span><span></span></div>
+            <div class="skeleton-row"><span></span><span></span><span></span></div>
+            <p class="state-caption">正在向 API 要列表…</p>
+          </div>
+
+          <div class="state-view state-empty" data-view="empty" hidden>
+            <div class="empty-mark" aria-hidden="true">0</div>
+            <h3>数据库是空的。</h3>
+            <p>先写第一件要跑通的事。新增成功后，这里会出现第一张任务卡。</p>
+            <button class="button button--ghost" type="button" data-focus-form>写第一条 <span aria-hidden="true">↑</span></button>
+          </div>
+
+          <div class="state-view state-error" data-view="error" hidden>
+            <p class="error-code">FETCH / CORS</p>
+            <h3>列表没加载出来。</h3>
+            <p class="error-message" data-error-message>未知错误</p>
+            <button class="button button--primary" type="button" data-retry>重试一次 <span aria-hidden="true">↻</span></button>
+            <p class="error-hint">先确认后端在运行，再确认服务端返回了 <code>Access-Control-Allow-Origin</code>。重试按钮会重新 GET。</p>
+          </div>
+
+          <ul class="task-list" data-task-list hidden aria-label="任务列表"></ul>
+        </section>
+      </section>
+
+      <section class="task-footnotes" aria-label="这条链路的三个约定">
+        <article>
+          <span>01</span>
+          <h3>数据不在 JS 里</h3>
+          <p>每次渲染都来自 <code>GET /api/tasks</code>，刷新页面也回到数据库。</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>三种状态都上屏</h3>
+          <p>loading、empty、error 是三个真实的分支，不是一个 <code>if (data.length)</code> 遮住。</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>CORS 在服务端解</h3>
+          <p>跨域失败时改 Flask 的响应头，不改浏览器安全策略。</p>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__bottom">
+      <p>© <span data-year>2026</span> 清荣 · 第一阶段作品档案</p>
+      <p class="site-footer__meta">TASK 03 · FLASK + SQLITE · <a href="index.html">回到首页 ↑</a></p>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="noscript-note">任务台需要 JavaScript 才能读取接口；页面内容和接口地址仍然可读。</p>
+  </noscript>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/tasks.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{
+  "loading": {
+    "view": "loading",
+    "api": "CHECKING",
+    "count": "--",
+    "status": "LOADING",
+    "error": "未知错误",
+    "items": []
+  },
+  "empty": {
+    "view": "empty",
+    "api": "ONLINE",
+    "count": "0",
+    "status": "EMPTY",
+    "error": "未知错误",
+    "items": []
+  },
+  "success": {
+    "view": "list",
+    "api": "ONLINE",
+    "count": "1",
+    "status": "READY",
+    "error": "未知错误",
+    "items": [
+      "把 CORS 错误原文写进 README"
+    ]
+  },
+  "afterDelete": {
+    "view": "list",
+    "api": "ONLINE",
+    "count": "1",
+    "status": "READY",
+    "error": "未知错误",
+    "items": [
+      "把 CORS 错误原文写进 README"
+    ]
+  },
+  "mobile": {
+    "view": "loading",
+    "api": "CHECKING",
+    "count": "--",
+    "status": "LOADING",
+    "error": "未知错误",
+    "items": []
+  }
+}

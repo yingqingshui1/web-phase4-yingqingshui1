@@ -42,6 +42,14 @@
 
 ![success](evidence/task3-success.png)
 
+### 线上验收
+
+- 页面：<https://yingqingshui1.github.io/web-phase4-yingqingshui1/tasks.html>
+- 线上 API：`https://2de8bf7f9e793d14-111-15-79-4.serveousercontent.com/api/tasks`
+- 实测：Edge 打开线上页面，列表来自 API；新增「线上新增与删除都已验证」、两步删除旧任务、F5 后再次 GET，数据仍在；控制台 0 条 error。
+
+![线上任务台](evidence/task3-public.png)
+
 ### 配置项
 
 业务代码不写死后端地址：

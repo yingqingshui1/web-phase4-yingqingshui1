@@ -1,0 +1,24 @@
+{
+  "site": "https://yingqingshui1.github.io/web-phase4-yingqingshui1/tasks.html",
+  "initial": {
+    "view": "list",
+    "api": "ONLINE",
+    "count": "1",
+    "status": "READY",
+    "error": "未知错误",
+    "items": [
+      "把 CORS 错误原文写进 README"
+    ]
+  },
+  "final": {
+    "view": "list",
+    "api": "ONLINE",
+    "count": "1",
+    "status": "READY",
+    "error": "未知错误",
+    "items": [
+      "线上新增与删除都已验证"
+    ]
+  },
+  "consoleErrors": []
+}

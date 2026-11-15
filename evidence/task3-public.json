@@ -1,0 +1,15 @@
+{
+  "site": "https://yingqingshui1.github.io/web-phase4-yingqingshui1/tasks.html",
+  "state": {
+    "view": "list",
+    "api": "ONLINE",
+    "count": "1",
+    "status": "READY",
+    "error": "未知错误",
+    "items": [
+      "线上新增与删除都已验证"
+    ]
+  },
+  "consoleErrors": [],
+  "networkFailures": []
+}

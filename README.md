@@ -5,12 +5,13 @@
 - **任务 1 选题**：2 / 第一阶段项目展示页
 - **线上站点**：<https://yingqingshui1.github.io/web-phase4-yingqingshui1/>
 - **任务台**：<https://yingqingshui1.github.io/web-phase4-yingqingshui1/tasks.html>
-- **仓库**：<https://github.com/yingqingshui1/web-phase4-yingqingshui1>
+- **前端仓库**：<https://github.com/yingqingshui1/web-phase4-yingqingshui1>
+- **后端仓库**：<https://github.com/yingqingshui1/task2-api-yingqingshui1>
 - **部署**：GitHub Pages · `main` / root
 - **任务 3 后端**：`https://2de8bf7f9e793d14-111-15-79-4.serveousercontent.com`（当前验收用的 HTTPS 隧道）
 - **任务 3 前端配置**：`js/config.js` 的 `API_BASE_URL` / `LOCAL_API_BASE_URL`
 
-> 后端隧道是临时演示，指向本机 Flask。隧道关闭后任务台会进入 error 状态并显示重试按钮；持久部署配置见任务 2 仓库的 `render.yaml`。
+> 后端隧道是临时演示，指向本机 Flask。隧道关闭后任务台会进入 error 状态并显示重试按钮；持久部署配置见任务 2 仓库的 [`render.yaml`](https://github.com/yingqingshui1/task2-api-yingqingshui1/blob/main/render.yaml)。
 
 ![电脑端首页](screenshots/desktop-home.png)
 
